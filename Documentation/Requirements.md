@@ -16,6 +16,7 @@ SmartAlarmClock is application for those who are hard to wake up.
 - Beep at a set time.
 - Don't turn off the beep until the user solves the tests.
 - Create tests.
+
 3.1.2.The user will be able to:
 - Create new alarm clock.
 - Delete necessary alarm clock.
