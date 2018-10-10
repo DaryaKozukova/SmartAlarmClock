@@ -10,14 +10,14 @@ The application was built for Android and is available on Android 4.0.3 or highe
 SmartAlarmClock is application for those who are hard to wake up.
 # 3. System Requirements
 ## 3.1. Functional Requirements
-### 3.1.1. SmartAlarmClock will:
-           - Create new alarm clock.
-           - Change the alarm clock settings.
-           - Beep at a set time.
-           - Don't turn off the beep until the user solves the tests.
-           - Create tests.
-### 3.1.2.The user will be able to:
-          - Create new alarm clock.
-          - Delete necessary alarm clock.
+3.1.1. SmartAlarmClock will:
+- Create new alarm clock.
+- Change the alarm clock settings.
+- Beep at a set time.
+- Don't turn off the beep until the user solves the tests.
+- Create tests.
+3.1.2.The user will be able to:
+- Create new alarm clock.
+- Delete necessary alarm clock.
 ## 3.2. Non-Functional Requirements
 ### 3.2.1. Software quality attributes
