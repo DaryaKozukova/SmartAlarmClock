@@ -15,17 +15,18 @@ SmartAlarmClock is application for those who are hard to wake up.
 - Change the alarm clock settings.
 - Beep at a set time.
 - Don't turn off the beep until the user solves the tests.
-- Create tests.
 
 3.1.2. The user will be able to:
 - Create new alarm clock.
-- Delete necessary alarm clock.
+- Delete unnecessary alarm clock.
 ## 3.2. Non-Functional Requirements
  3.2.1. Software quality attributes
 1. Interface  
 The application must adaptto different screem size.
-2. Charge  
+2. Charge 
 To save battery the application must turn off alarm clock after 5 minutes and repeat beep after 10 minutes.
+3. The application function:
+The app must create different test each time.
 # 4. Analogs
 1. [Alarmy - Sleep If U Can](https://play.google.com/store/apps/details?id=droom.sleepIfUCan) is a alarm clock which uses different tests for turn off the beep:
   - Shake you phone.
