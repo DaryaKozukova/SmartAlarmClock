@@ -22,11 +22,9 @@ SmartAlarmClock is application for those who are hard to wake up.
 - Delete necessary alarm clock.
 ## 3.2. Non-Functional Requirements
  3.2.1. Software quality attributes
-1. Interface
-
+1. Interface  
 The application must adaptto different screem size.
-2. Charge
-
+2. Charge  
 To save battery the application must turn off alarm clock after 5 minutes and repeat beep after 10 minutes.
 # 4. Analogs
  
