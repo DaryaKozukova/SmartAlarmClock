@@ -28,7 +28,7 @@ The application must adaptto different screem size.
 To save battery the application must turn off alarm clock after 5 minutes and repeat beep after 10 minutes.
 # 4. Analogs
 1. [Alarmy - Sleep If U Can](https://play.google.com/store/apps/details?id=droom.sleepIfUCan) is a alarm clock which uses different tests for turn off the beep:
-- Shake you phone.
-- Take a picture of a registered place.
+  - Shake you phone.
+  - Take a picture of a registered place.
 
  
