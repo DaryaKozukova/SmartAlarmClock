@@ -11,8 +11,6 @@ SmartAlarmClock is application for those who are hard to wake up.
 # 3. System Requirements
 ## 3.1. Functional Requirements
 3.1.1. SmartAlarmClock will:
-- Create new alarm clock.
-- Change the alarm clock settings.
 - Beep at a set time.
 - Don't turn off the beep until the user solves the tests.
 
