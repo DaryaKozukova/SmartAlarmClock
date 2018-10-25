@@ -9,6 +9,8 @@ Alarm clock with a conundrum for Android
 [Sequence Diagrams](https://github.com/DaryaKozukova/SmartAlarmClock/tree/master/Diagrams/Sequence)   
 [State Diagrams](https://github.com/DaryaKozukova/SmartAlarmClock/tree/master/Diagrams/State)  
 [Class Diagrams](https://github.com/DaryaKozukova/SmartAlarmClock/blob/master/Diagrams/Class%20Diagram.png)   
+[Components Diagram](https://github.com/DaryaKozukova/SmartAlarmClock/tree/master/Diagrams/Components%20Diagram)   
+[Deplooyment Diagram](https://github.com/DaryaKozukova/SmartAlarmClock/tree/master/Diagrams/Deplooyment%20Diagram)   
 [Glossary](https://github.com/DaryaKozukova/SmartAlarmClock/blob/master/Diagrams/Glossary.md)   
 
 
