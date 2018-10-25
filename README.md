@@ -6,6 +6,9 @@ Alarm clock with a conundrum for Android
 [Use Case](https://github.com/DaryaKozukova/SmartAlarmClock/blob/master/Diagrams/Use%20Case.pdf)  
 [Flow Events](https://github.com/DaryaKozukova/SmartAlarmClock/blob/master/Diagrams/Flow%20of%20Events.md)   
 [Activity Diagrams](https://github.com/DaryaKozukova/SmartAlarmClock/tree/master/Diagrams/Activity%20Diagrams)  
-[Sequence Diagrams](https://github.com/DaryaKozukova/SmartAlarmClock/tree/master/Diagrams/Sequence)  
+[Sequence Diagrams](https://github.com/DaryaKozukova/SmartAlarmClock/tree/master/Diagrams/Sequence)   
+[State Diagrams](https://github.com/DaryaKozukova/SmartAlarmClock/tree/master/Diagrams/State)  
+[Class Diagrams](https://github.com/DaryaKozukova/SmartAlarmClock/blob/master/Diagrams/Class%20Diagram.png)   
+[Glossary](https://github.com/DaryaKozukova/SmartAlarmClock/blob/master/Diagrams/Glossary.md)   
 
 
