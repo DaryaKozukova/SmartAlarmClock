@@ -5,9 +5,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.provider.AlarmClock;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -23,13 +25,11 @@ import java.util.ArrayList;
 
 public class Settings extends AppCompatActivity {
     private TimePicker mTimePicker;
-    private Button mSave;
-    private Button mCancel;
-    private Button mRepeat;
     private ArrayList<Integer> mChooseDays;
     private String[] data;
     private boolean[] checkedDays;
-    private int mSetTime;
+    private int isSet = 0;
+    private String mSetTime;
     private DatabaseHelper mHelper;
     private SQLiteDatabase mDatabase;
     private Cursor mCursor;
@@ -45,9 +45,6 @@ public class Settings extends AppCompatActivity {
         time.setToNow();
 
         mTimePicker = (TimePicker) findViewById(R.id.timePicker);
-        mRepeat = (Button)findViewById(R.id.repeat);
-        mCancel = (Button)findViewById(R.id.Cancel);
-        mSave = (Button)findViewById(R.id.Save);
 
         mTimePicker.setCurrentHour(time.hour);
         mTimePicker.setCurrentMinute(time.minute);
@@ -55,36 +52,48 @@ public class Settings extends AppCompatActivity {
         mTimePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
-                mSetTime = hourOfDay * 60 + minute;
+                if(minute < 10) mSetTime = new String(hourOfDay + ":0" + minute);
+                else mSetTime = new String(hourOfDay + ":" + minute);
             }
         });
+        mDatabase = mHelper.getWritableDatabase();
+
     }
 
 
     public void onButtonClick(View v){
-        mDatabase = mHelper.getWritableDatabase();
         final ContentValues contentValues = new ContentValues();
-
-        mSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.Save:
                 contentValues.put(DatabaseHelper.COLUMN_TIME, mSetTime);
-                contentValues.put(DatabaseHelper.COLUMN_REPEAT, mChooseDays.toString());
-                mDatabase.insert(DatabaseHelper.TABLE_NAME, null, contentValues);
+                Log.i("InSet", Integer.toString(mChooseDays.size()));
+                if(mChooseDays.size() != 0 || mChooseDays == null) contentValues.put(DatabaseHelper.COLUMN_REPEAT, mChooseDays.toString());
+                else {
+
+                    mDatabase.close();
+                    finish();
+
+                }
+
+                Intent intent = getIntent();
+                String timeString = intent.getStringExtra("Time");
+                Log.i("InSet", timeString);
+                if(timeString.equals("CreateNew")) {
+
+                    mDatabase.insert(DatabaseHelper.TABLE_NAME, null, contentValues);
+                    mDatabase.close();
+                }else{
+                    int update = mDatabase.update(DatabaseHelper.TABLE_NAME, contentValues,
+                            DatabaseHelper.COLUMN_TIME + "= ?", new String[]{ timeString});
+                    Log.i("InSet", "Update " + Integer.toString(update));
+                }
+                finish();
+                break;
+            case R.id.Cancel:
                 mDatabase.close();
                 finish();
-            }
-        });
-
-        mCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-        mRepeat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+            case R.id.repeat:
                 mChooseDays = new ArrayList<Integer>();
                 data = getResources().getStringArray(R.array.days);
                 checkedDays= new boolean[data.length];
@@ -94,15 +103,18 @@ public class Settings extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which, boolean isChecked) {
                         if(isChecked) mChooseDays.add(which);
-                            else mChooseDays.remove(Integer.valueOf(which));
+                        else mChooseDays.remove(Integer.valueOf(which));
                     }
                 });
 
                 mBuilder.setCancelable(true);
                 AlertDialog mDialog = mBuilder.create();
                 mDialog.show();
-            }
-        });
+                break;
+                default:
+                    break;
+        }
+
     }
 
 }

@@ -23,10 +23,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE " + TABLE_NAME +  "(" + COLUMN_ID
                 + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_TIME
-                + " INTEGER, " + COLUMN_REPEAT + " TEXT);");
-        // добавление начальных данных
-        db.execSQL("INSERT INTO "+ TABLE_NAME +" (" + COLUMN_TIME
-                + ", " + COLUMN_REPEAT  + ") VALUES (1000, '123');");
+                + " TEXT, " + COLUMN_REPEAT + " TEXT," + COLUMN_STATUS + " TEXT);");
+//        // добавление начальных данных
+//        db.execSQL("INSERT INTO "+ TABLE_NAME +" (" + COLUMN_TIME
+//                + ", " + COLUMN_REPEAT  + ") VALUES (1000, '123');");
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion,  int newVersion) {
