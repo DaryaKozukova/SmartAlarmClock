@@ -71,7 +71,7 @@ public class AlarmClock extends AppCompatActivity {
                 Intent intent = new Intent(".Settings");
                 intent.putExtra("Time", "CreateNew");
                 startActivity(intent);
-                //mDataBase.delete(DatabaseHelper.TABLE_NAME, null, null);
+                mDataBase.delete(DatabaseHelper.TABLE_NAME, null, null);
 
                 break;
             default:
