@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.content.Context;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "SQLAlarmTime";
+    public static final String DATABASE_NAME = "AlarmTimeSQL";
     public static final int VERSION = 1;
     public static final String TABLE_NAME = "alarmTable";
 
@@ -33,3 +33,4 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 }
+

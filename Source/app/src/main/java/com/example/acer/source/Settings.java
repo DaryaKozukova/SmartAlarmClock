@@ -1,4 +1,5 @@
 package com.example.acer.source;
+
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -21,6 +22,7 @@ import android.text.format.Time;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class Settings extends AppCompatActivity {
     private TimePicker mTimePicker;
@@ -67,28 +69,29 @@ public class Settings extends AppCompatActivity {
         final ContentValues contentValues = new ContentValues();
         switch (v.getId()){
             case R.id.Save:
-                contentValues.put(DatabaseHelper.COLUMN_TIME, mSetTime);
-                contentValues.put(DatabaseHelper.COLUMN_STATUS, "0");
-                Log.i("InSet", Integer.toString(mChooseDays.size()));
-                if(mChooseDays.size() != 0 || mChooseDays == null) contentValues.put(DatabaseHelper.COLUMN_REPEAT, mChooseDays.toString());
-                else {
-                    mDatabase.close();
-                    finish();
+                if(mSetTime == null){
+                    Time time = new Time();
+                    time.setToNow();
+                    if(time.minute < 10) mSetTime = time.hour + ":0" + time.minute;
+                        else mSetTime = time.hour + ":" + time.minute;
+                    if(time.hour < 10) mSetTime = "0" + mSetTime;
                 }
+                contentValues.put(DatabaseHelper.COLUMN_TIME, mSetTime);
+                contentValues.put(DatabaseHelper.COLUMN_REPEAT, mChooseDays.toString());
+
 
                 Intent intent = getIntent();
                 String timeString = intent.getStringExtra("Time");
                 Log.i("InSet", timeString);
                 if(timeString.equals("CreateNew")) {
-
+                    contentValues.put(DatabaseHelper.COLUMN_STATUS, "1");
                     mDatabase.insert(DatabaseHelper.TABLE_NAME, null, contentValues);
                     mDatabase.close();
                 }else{
+                    contentValues.put(DatabaseHelper.COLUMN_STATUS, "0");
                     int update = mDatabase.update(DatabaseHelper.TABLE_NAME, contentValues,
                             DatabaseHelper.COLUMN_TIME + "= ?", new String[]{ timeString});
-                    Log.i("InSet", "Update " + Integer.toString(update));
                 }
-
                 finish();
                 break;
             case R.id.Cancel:

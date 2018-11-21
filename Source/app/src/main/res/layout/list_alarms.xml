@@ -30,6 +30,8 @@
             android:textSize="15sp"
             android:minWidth="300dp"
             android:minHeight="35dp" />
+
+
     </LinearLayout>
 
 
@@ -39,9 +41,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_marginRight="20dp"
+        android:onClick="onButtonClick"
         android:layout_weight="1"
+        android:clickable="true"
         android:focusable="false"
         android:focusableInTouchMode="false" />
+
+
 
 </LinearLayout>
 
