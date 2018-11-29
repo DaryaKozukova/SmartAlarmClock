@@ -11,7 +11,7 @@ Alarm clock with a conundrum for Android
 - [State Diagrams](https://github.com/DaryaKozukova/SmartAlarmClock/tree/master/Diagrams/State)  
 - [Class Diagrams](https://github.com/DaryaKozukova/SmartAlarmClock/blob/master/Diagrams/Class%20Diagram.png)   
 - [Components Diagram](https://github.com/DaryaKozukova/SmartAlarmClock/blob/master/Diagrams/Components%20Diagram/Component%20Diagram.png) 
-- [Deplooyment Diagram](https://github.com/DaryaKozukova/SmartAlarmClock/blob/master/Diagrams/Deplooyment%20Diagram/Deployment%20diagram.png)   
+- [Deployment Diagram](https://github.com/DaryaKozukova/SmartAlarmClock/blob/master/Diagrams/Deplooyment%20Diagram/Deployment%20diagram.png)   
 ### [Glossary](https://github.com/DaryaKozukova/SmartAlarmClock/blob/master/Diagrams/Glossary.md)
 ### [Testing](https://github.com/DaryaKozukova/SmartAlarmClock/tree/master/Testing)
 - [Test Plan](https://github.com/DaryaKozukova/SmartAlarmClock/blob/master/Testing/TestPlan.md)
